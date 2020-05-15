@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>毕业100</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index4.css">
+</head>
+<body>
+  <div id="content">
+    <div id="Home">   
+      
+      <div id="name">
+        <img src="img/4-1.png" style="width:100%">
+      </div>
+      <div id="major">
+        <img src="img/4-2.png" style="width:100%">
+      </div>
+      <div id="love_building">
+        <img src="img/4-3.png" style="width:100%">
+      </div>
+      <div id="love_food">
+        <img src="img/4-4.png" style="width:100%">
+      </div>     
+      <div id="koudai">
+        <img src="img/4-5.png" style="width:100%">
+      </div>
+      <div id="things">
+        <img src="img/4-6.png" style="width:100%">
+      </div>
+      <div id="sodoi">
+        <img src="img/4-7.png" style="width:100%">
+      </div>
+      <div id="square">
+        <img src="img/4-9.png" style="width:100%">
+      </div>
+      <div id="graduation">
+        <img src="img/4-10.png" style="width:100%">
+      </div>
+    </div>
+  </div>
+</body>
+
+ <script type="text/javascript">
+    function onload(){
+    var sen = "Home";  
+    var width = document.documentElement.clientWidth;
+    var height = document.documentElement.clientHeight;
+    var ratio = width / height;
+    if (ratio > (9 / 16)) {
+      var bodywidth = height * 9 / 16;
+      var margin = (width - bodywidth) / 2;
+      document.getElementById(sen).style.height= height + 'px';
+      document.getElementById(sen).style.width= bodywidth + 'px';
+      document.getElementById(sen).style.marginLeft= margin + 'px';
+      document.getElementById(sen).style.marginRight= margin + 'px';
+    }else if(ratio < (9 / 16)){
+      var bodyheight = width * 16 / 9;
+      var margin = (height - bodyheight) / 2;
+      document.getElementById(sen).style.height = bodyheight + 'px';
+      document.getElementById(sen).style.width = width + 'px';
+      document.getElementById(sen).style.marginTop = margin + 'px';
+      document.getElementById(sen).style.marginBottom = margin + 'px';
+    }else{
+      document.getElementById(sen).style.height = height + 'px';
+      document.getElementById(sen).style.width = width + 'px';
+      document.getElementById(sen).style.marginTop = 0 + 'px';
+      document.getElementById(sen).style.marginBottom = 0 + 'px';
+    }
+  }
+  onload(); 
+</script>
+</html>

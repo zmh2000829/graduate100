@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>毕业100-2</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index2.css">
+</head>
+<body>
+  <div id="content">
+    <div id="Home">   
+      <!-- <div id="background"> -->
+        <!-- <img src="img/2-3.png" style="width:100%"> -->
+      <!-- </div>   -->
+      <div id='canvasdiv' style="width: 100%; height:100%" >
+        <canvas id="canvas" ></canvas>
+      </div>
+      <div id="btn" >
+        <img onclick="select()" src="img/2-9.png" alt="666" style="width:100%">
+      </div>
+      <img id="img" src="./img/100/01.png" style="display:none">
+    </div>
+  </div>
+</body>
+
+ <script type="text/javascript">
+    function onload(){
+	    var sen = "Home";  
+	    var width = document.documentElement.clientWidth;
+      var height = document.documentElement.clientHeight;
+	    var ratio = width / height;
+	    if (ratio > (9 / 16)) {
+	      var bodywidth = height * 9 / 16;
+	      var margin = (width - bodywidth) / 2;
+	      document.getElementById(sen).style.height= height + 'px';
+	      document.getElementById(sen).style.width= bodywidth + 'px';
+	      document.getElementById(sen).style.marginLeft= margin + 'px';
+	      document.getElementById(sen).style.marginRight= margin + 'px';
+	    }else if(ratio < (9 / 16)){
+	      var bodyheight = width * 16 / 9;
+	      var margin = (height - bodyheight) / 2;
+	      document.getElementById(sen).style.height = bodyheight + 'px';
+	      document.getElementById(sen).style.width = width + 'px';
+	      document.getElementById(sen).style.marginTop = margin + 'px';
+	      document.getElementById(sen).style.marginBottom = margin + 'px';
+	    }else{
+	      document.getElementById(sen).style.height = height + 'px';
+	      document.getElementById(sen).style.width = width + 'px';
+	      document.getElementById(sen).style.marginTop = 0 + 'px';
+	      document.getElementById(sen).style.marginBottom = 0 + 'px';
+	    }
+  	}
+  	onload();
+
+
+</script>
+<script type="text/javascript">
+var width = document.documentElement.clientWidth;
+var height = document.documentElement.clientHeight;
+
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+canvas.setAttribute('width',width)
+canvas.setAttribute('height',height)
+// ctx.fillStyle = "red";
+ctx.font = "40px sans-serif";
+ctx.textAlign = "left";
+ctx.textBaseline="top"; 
+var textUpY = 0.27*height;
+var textDownY = 0.75*height;
+var textLeftX = 0;
+var textRightX = width;
+var interval = width/4;
+// var total_width = textlist.length * interval;
+var textlist = [];
+
+var selected = [];
+
+  function select(){
+    if(selected.length>0){
+      window.location.href = "index3.html";
+    }
+    else{
+      alert('还没有选择事件qaq')
+    }
+}
+
+for(i=0;i<100;i++)
+{
+  textlist.push({s:'事件'+i.toString(), x:0, y:0});
+  textlist[i].width = ctx.measureText(textlist[i].s).width;
+  textlist[i].height = 50;
+  textlist[i].ispic = false;
+  textlist[i].picture = new Image();
+  if(i+1<10){
+    textlist[i].picture.src = "img/100/0"+(i+1).toString()+'.png';
+  }
+  else{
+    textlist[i].picture.src = "img/100/"+(i+1).toString()+'.png';
+  }
+  
+}
+
+var totalWidth = (textlist.length/5) * interval;
+
+
+
+function draw(k){
+
+var leftX = (textLeftX + k);
+var currentX = leftX;
+var currentY = textUpY;
+var padding = 50
+
+var i = 0;
+while(i<textlist.length){
+  var currentW = ctx.measureText(textlist[i].s).width;
+  if(i==0||i%5!=0){
+    textlist[i].x = currentX;
+    textlist[i].y = currentY;
+    if(textlist[i].ispic){
+      middleX = currentX+currentW/2
+      middleY = currentY+10
+      img = textlist[i].picture
+      ctx.drawImage(img,middleX-90,middleY-90,180,180);
+    }
+    else{
+      ctx.fillText(textlist[i].s, currentX, currentY);
+    }
+    
+    currentY = currentY  + 200;
+
+  }
+  else{
+    // currentY += ctx.measureText(textlist[i]).height;
+    currentY = textUpY;
+    currentX += interval;//+padding;
+    textlist[i].x = currentX;
+    textlist[i].y = currentY;
+    if(textlist[i].ispic){
+      middleX = currentX+currentW/2
+      middleY = currentY-20
+      img = textlist[i].picture
+      ctx.drawImage(img,middleX-90,middleY-90,180,180);
+    }
+    else{
+      ctx.fillText(textlist[i].s, currentX, currentY);
+    }
+    // currentX = currentX  + interval;
+    currentY = currentY  + 200;
+  }
+  i+=1;
+
+}
+
+}
+
+var img = document.getElementById("img");
+function showPic(x,y)
+{
+  console.log('aaaa')
+  for(i=0;i<textlist.length;i++){
+
+    o_x = textlist[i].x
+    o_y = textlist[i].y
+    o_w = textlist[i].width
+    o_h = textlist[i].height
+    middleX = o_x+o_w/2
+    middleY = o_y+10
+    console.log('Onclick!!!')
+    if((o_x<x)&&(x<o_x+o_w)&&(y>o_y)&&(y<o_y+o_h)){
+      textlist[i].ispic = true
+      // ctx.drawImage(img,middleX-50/2,middleY-50/2,50,50);
+      selected.push(i)
+      update()
+      console.log(i,"text:",o_x,o_y,o_w,o_h,"mouse:",x,y)
+    }
+  }
+}
+// ctx.fillText("光华楼",100,textUpY+100);
+// ctx.fillText("You jump! I jump!",50,100);
+// ctx.fillText("rose~jack",50,200);
+var speed=0.1;
+
+
+function update(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  draw(speed)
+}
+// update()
+
+    var x=0,y=0;
+    var started = false;
+    var move = false;
+    //添加鼠标按下事件
+    canvas.ontouchstart=function (event) {
+        // x_start= e.clientX; y_start=e.clientY;
+        // console.log('Down!!!',event.touches);
+      x = event.touches[0].clientX;
+      y = event.touches[0].clientY;
+      // y = event.y;
+      // var canvas = event.target;
+      // var loc = getPointOnCanvas(canvas, x, y);
+      started = true;
+        //按下后可移动
+        console.log('Down!!!',x);
+    };
+      canvas.ontouchmove = function(event){
+      // x= e.clientX; y=e.clientY;
+
+      if (started)
+      {
+      speed -= (x-event.touches[0].clientX);
+      x = event.touches[0].clientX;
+      move = true;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw(speed)
+      }
+      console.log(speed);
+  };
+
+      canvas.ontouchend = function(event){
+        if(started){
+          // console.log(event.touches)
+
+          if(!move){
+            // showPic(x, y)
+          }
+        }
+          started = false
+          move = false
+          console.log('Up!!!');
+      };
+
+canvas.addEventListener('click', function(e){
+  console.log(e)
+    showPic(e.clientX, e.clientY);
+}, false);
+
+
+    (function drawFrame(){
+         window.requestAnimationFrame(drawFrame, canvas);
+          update()
+                
+         // if(speed > 100) speed = 0;
+         if(-speed > totalWidth) {speed = width;}
+         speed -= 2;
+
+
+         
+    }());
+
+
+
+
+
+</script>
+</html>
