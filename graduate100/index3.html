@@ -17,7 +17,7 @@
         <img src="img/3-3.png" style="width:100%">
       </div>
       <div id="egg2">
-        <img src="img/3-3.png" style="width:100%">
+        <img src="img/3-3.png" style="width:100%;">
       </div>
       <div id="egg3">
         <img src="img/3-3.png" style="width:100%">
@@ -60,5 +60,30 @@
     }
   }
   onload(); 
+  disappeare();
+
+function operate1(){
+    document.getElementById('egg1').style.display=""; 
+}
+function operate2(){ 
+    document.getElementById('egg2').style.display="";  
+}
+function operate3(){
+    document.getElementById('egg3').style.display="";  
+}
+function operate4(){
+    document.getElementById('egg-pro').style.display="";  
+}
+function disappeare(){
+    document.getElementById('egg1').style.display="none";
+    document.getElementById('egg2').style.display="none";
+    document.getElementById('egg3').style.display="none";
+    document.getElementById('egg-pro').style.display="none";
+    setTimeout("operate1()",800);
+    setTimeout("operate2()",1600);
+    setTimeout("operate3()",2400);
+    setTimeout("operate4()",3200);
+}
+
 </script>
 </html>
