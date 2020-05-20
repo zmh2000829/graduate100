@@ -17,28 +17,56 @@
     position: absolute;
     top:16%;
     z-index: 2;    
-    left:39%;
+    left:36.5%;
+}
+#name_txt{
+    position: absolute;
+    top:15.5%;
+    width: 48%;    
+    left:50.5%;
+    z-index: 2;
 }
 #major{
     width: 10.5%;
     position: absolute;
     top:19.5%;
     z-index: 2;    
-    left:38.5%;
+    left:36%;
+}
+#major_txt{
+    position: absolute;
+    top:19.3%;
+    width: 48%;    
+    left:50.5%;
+    z-index: 2;
 }
 #love_building{
     width: 27%;
     position: absolute;
     top:23%;
     z-index: 2;    
-    left:38.5%;
+    left:36%;
+}
+#building_txt{
+    position: absolute;
+    top:22.8%;
+    width: 33%;    
+    left:66%;
+    z-index: 2;
 }
 #love_food{
     width: 27%;
     position: absolute;
     top:26.5%;
     z-index: 2;    
-    left:38.5%;
+    left:36%;
+}
+#food_txt{
+    position: absolute;
+    top:26.3%;
+    width: 33%;    
+    left:66%;
+    z-index: 2;
 }
 #koudai{
     position: absolute;
@@ -58,7 +86,7 @@
     position: absolute;
     width: 41%;
     left: 39%;
-    top: 44%;
+    top: 43.5%;
     z-index: 2;
 }
 #graduation{

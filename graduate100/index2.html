@@ -70,11 +70,23 @@
   	}
   	onload();
 
-  function select(){
-  	if((document.getElementById("nameText").value == '')||(document.getElementById("majorText").value == '')||(document.getElementById("buildingText").value == '')||(document.getElementById("foodText").value == '')){
-        alert('信息还未完善哦~')
+    function select(){
+      var name = document.getElementById("nameText");
+      var major = document.getElementById("majorText");
+      var build = document.getElementById("buildingText");
+      var food = document.getElementById("foodText");
+  	 if((name.value == '')||(major.value == '')||(build.value == '')||(food.value == '')){
+          alert(+'信息还未完善哦~')
+      }
+      else{
+        window.sessionStorage["name"] = name.value;
+        window.sessionStorage["major"] = major.value;
+        window.sessionStorage["build"] = build.value;
+        window.sessionStorage["food"] = food.value;
+        window.location.href = "select.html";
+      }
     }
-    else{window.location.href = "select.html";}
-}
+    postdata();
+
 </script>
 </html>

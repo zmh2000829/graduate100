@@ -4,6 +4,13 @@
 	<title>毕业100</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/index4.css">
+  <style>
+    .textarea{
+      width: 100%;
+      font-family:'幼圆';
+      resize:none;
+    }
+  </style>
 </head>
 <body>
   <div id="content">
@@ -12,14 +19,26 @@
       <div id="name">
         <img src="img/4-1.png" style="width:100%">
       </div>
+      <div id="name_txt">
+        <textarea class="textarea" rows="1" id="name_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
+      </div>
       <div id="major">
         <img src="img/4-2.png" style="width:100%">
+      </div>
+      <div id="major_txt">
+        <textarea class="textarea" rows="1" id="major_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="love_building">
         <img src="img/4-3.png" style="width:100%">
       </div>
+      <div id="building_txt">
+        <textarea rows="1" class="textarea" id="building_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
+      </div>
       <div id="love_food">
         <img src="img/4-4.png" style="width:100%">
+      </div>
+      <div id="food_txt">
+        <textarea rows="1" class="textarea" id="food_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>     
       <div id="koudai">
         <img src="img/4-5.png" style="width:100%">
@@ -68,5 +87,18 @@
     }
   }
   onload(); 
+  getdata();
+  function getdata(){
+      //alert(window.sessionStorage.getItem('name'));
+      var name = window.sessionStorage.getItem('name');
+      var major = window.sessionStorage.getItem('major');
+      var building = window.sessionStorage.getItem('build');
+      var food = window.sessionStorage.getItem('food');
+      document.all.name_text.innerHTML = name;
+      document.all.major_text.innerHTML = major;
+      document.all.building_text.innerHTML = building;
+      document.all.food_text.innerHTML = food;
+
+  }
 </script>
 </html>
