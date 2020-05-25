@@ -8,9 +8,6 @@
 <body>
   <div id="content">
     <div id="Home">   
-      <!-- <div id="background"> -->
-        <!-- <img src="img/2-3.png" style="width:100%"> -->
-      <!-- </div>   -->
       <div id='canvasdiv' style="width: 100%; height:100%" >
         <canvas id="canvas" style="position: absolute;left:5%;" ></canvas>
       </div>
@@ -73,11 +70,12 @@ var textRightX = width;
 var interval = width/4;
 // var total_width = textlist.length * interval;
 var textlist = [];
-
 var selected = [];
 
-  function select(){
-    if(selected.length>0){
+function select(){
+    if(selected.length > 0){ 
+      window.sessionStorage['number'] = selected;  
+      window.sessionStorage["num"] = selected.length;
       window.location.href = "index3.html";
     }
     else{
@@ -103,55 +101,52 @@ for(i=0;i<100;i++)
 
 var totalWidth = (textlist.length/5) * interval;
 
-
-
 function draw(k){
 
-var leftX = (textLeftX + k);
-var currentX = leftX;
-var currentY = textUpY;
-var padding = 50
+  var leftX = (textLeftX + k);
+  var currentX = leftX;
+  var currentY = textUpY;
+  var padding = 50
+  var i = 0;
+  while(i<textlist.length){
+    var currentW = ctx.measureText(textlist[i].s).width;
+    if(i==0||i%5!=0){
+      textlist[i].x = currentX;
+      textlist[i].y = currentY;
+      if(textlist[i].ispic){
+        middleX = currentX+currentW/2
+        middleY = currentY+10
+        img = textlist[i].picture
+        ctx.drawImage(img,middleX-90,middleY-90,180,180);
+      }
+      else{
+        ctx.fillText(textlist[i].s, currentX, currentY);
+      }
+      
+      currentY = currentY  + 200;
 
-var i = 0;
-while(i<textlist.length){
-  var currentW = ctx.measureText(textlist[i].s).width;
-  if(i==0||i%5!=0){
-    textlist[i].x = currentX;
-    textlist[i].y = currentY;
-    if(textlist[i].ispic){
-      middleX = currentX+currentW/2
-      middleY = currentY+10
-      img = textlist[i].picture
-      ctx.drawImage(img,middleX-90,middleY-90,180,180);
     }
     else{
-      ctx.fillText(textlist[i].s, currentX, currentY);
+      // currentY += ctx.measureText(textlist[i]).height;
+      currentY = textUpY;
+      currentX += interval;//+padding;
+      textlist[i].x = currentX;
+      textlist[i].y = currentY;
+      if(textlist[i].ispic){
+        middleX = currentX+currentW/2
+        middleY = currentY+10
+        img = textlist[i].picture
+        ctx.drawImage(img,middleX-90,middleY-90,180,180);
+      }
+      else{
+        ctx.fillText(textlist[i].s, currentX, currentY);
+      }
+      // currentX = currentX  + interval;
+      currentY = currentY  + 200;
     }
-    
-    currentY = currentY  + 200;
+    i+=1;
 
   }
-  else{
-    // currentY += ctx.measureText(textlist[i]).height;
-    currentY = textUpY;
-    currentX += interval;//+padding;
-    textlist[i].x = currentX;
-    textlist[i].y = currentY;
-    if(textlist[i].ispic){
-      middleX = currentX+currentW/2
-      middleY = currentY+10
-      img = textlist[i].picture
-      ctx.drawImage(img,middleX-90,middleY-90,180,180);
-    }
-    else{
-      ctx.fillText(textlist[i].s, currentX, currentY);
-    }
-    // currentX = currentX  + interval;
-    currentY = currentY  + 200;
-  }
-  i+=1;
-
-}
 
 }
 
@@ -237,7 +232,6 @@ canvas.addEventListener('click', function(e){
     showPic(e.clientX-document.documentElement.clientWidth*0.05, e.clientY);
 }, false);
 
-
     (function drawFrame(){
          window.requestAnimationFrame(drawFrame, canvas);
           update()
@@ -245,14 +239,8 @@ canvas.addEventListener('click', function(e){
          // if(speed > 100) speed = 0;
          if(-speed > totalWidth) {speed = width;}
          speed -= 2;
-
-
          
     }());
-
-
-
-
 
 </script>
 </html>

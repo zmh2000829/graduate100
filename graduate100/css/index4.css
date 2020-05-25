@@ -1,3 +1,11 @@
+#canvasdiv{
+    z-index: 5;
+    height: 43.5%;
+    position: absolute;
+    width: 76%;
+    left: 12.3%;
+    top: 48%; 
+}
 #content{
   position: absolute;
   background: url("../img/4-8.png") no-repeat center;
@@ -35,7 +43,7 @@
 }
 #major_txt{
     position: absolute;
-    top:19.3%;
+    top:19.2%;
     width: 48%;    
     left:50.5%;
     z-index: 2;
@@ -73,6 +81,13 @@
     width: 60%;
     left: 21%;
     top: 31.5%;
+    z-index: 2;
+}
+#num{
+    position: absolute;
+    top:35.8%;
+    width: 14%;    
+    left:40.5%;
     z-index: 2;
 }
 #things{

@@ -43,6 +43,9 @@
       <div id="koudai">
         <img src="img/4-5.png" style="width:100%">
       </div>
+      <div id="num">
+        <textarea rows="1" class="textarea" id="num_text" readonly="readonly" style="font-size: 99px;background:transparent;border-style:none;"></textarea>
+      </div>
       <div id="things">
         <img src="img/4-6.png" style="width:100%">
       </div>
@@ -57,6 +60,9 @@
       </div>
     </div>
   </div>
+    <div id='canvasdiv' >
+        <canvas id="canvas" style="position: absolute;width:96%;left:2%;" ></canvas>
+    </div>
 </body>
 
  <script type="text/javascript">
@@ -89,16 +95,63 @@
   onload(); 
   getdata();
   function getdata(){
-      //alert(window.sessionStorage.getItem('name'));
+
       var name = window.sessionStorage.getItem('name');
       var major = window.sessionStorage.getItem('major');
       var building = window.sessionStorage.getItem('build');
       var food = window.sessionStorage.getItem('food');
+      var num = window.sessionStorage.getItem('num');
+      
       document.all.name_text.innerHTML = name;
       document.all.major_text.innerHTML = major;
       document.all.building_text.innerHTML = building;
       document.all.food_text.innerHTML = food;
-
+      document.all.num_text.innerHTML = num;
   }
+
+  function getimglist(){//string序号数组转换int并返回
+    var number = window.sessionStorage.getItem('number');
+    var list = [];
+    var arr = number.split(',');
+      for(var i = 0;i < arr.length;i++){
+          list[i] = parseInt(arr[i]);
+      }
+      return list;
+  }
+</script>
+<script type="text/javascript">
+
+var canvas = document.getElementById('canvas').getContext('2d');
+var imgnumlist = getimglist(); //int型选中的img序号数组
+var imglist = [];
+var p,q;
+canvas.font = "18px bold 黑体";
+canvas.textAlign = "center";
+canvas.textBaseline = "middle";
+
+for(var i = 0;i < imgnumlist.length; i++){
+  n = imgnumlist[i];
+  imglist.push({s:'事件'+n.toString(), x:0, y:0});
+  imglist[i].picture = new Image();
+  if(n + 1 < 10){
+    imglist[i].picture.src = "img/100/0" + (n + 1).toString()+'.png';
+  }
+  else{
+    imglist[i].picture.src = "img/100/" + (n + 1).toString()+'.png';
+  }
+}
+
+canvas.fillText("要写的文字", 100, 100);
+console.log(imglist[0]);
+console.log("zmhffff");
+for(var i = 0, p = 10; i < imgnumlist.length; i++,p+=20){
+  canvas.fillText(imgnumlist[i], 10, p);
+}
+
+//这里图片不知道为什么不能显示！！！
+//canvas.drawImage(imglist[0].picture,50,100);
+//var img = new Image();
+//img.src = "img/100/01.png"
+//canvas.drawImage(img,50,100);
 </script>
 </html>
