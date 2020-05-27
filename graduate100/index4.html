@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-    <div id='canvasdiv' >
+    <div id='canvasdiv'style=" overflow:auto" >
         <canvas id="canvas" style="position: absolute;width:96%;left:2%;" ></canvas>
     </div>
 </body>
@@ -120,8 +120,14 @@
   }
 </script>
 <script type="text/javascript">
+var width = document.getElementById('canvasdiv').clientWidth;
+var height = document.getElementById('canvasdiv').clientHeight*6;
 
-var canvas = document.getElementById('canvas').getContext('2d');
+var can = document.getElementById('canvas');
+var canvas = can.getContext('2d');
+
+can.setAttribute('width',width)
+can.setAttribute('height',height)
 var imgnumlist = getimglist(); //int型选中的img序号数组
 var imglist = [];
 var p,q;
@@ -141,17 +147,34 @@ for(var i = 0;i < imgnumlist.length; i++){
   }
 }
 
-canvas.fillText("要写的文字", 100, 100);
-console.log(imglist[0]);
-console.log("zmhffff");
-for(var i = 0, p = 10; i < imgnumlist.length; i++,p+=20){
-  canvas.fillText(imgnumlist[i], 10, p);
+var len = imgnumlist.length;
+var img = new Image();
+var row,j;
+img.src = "img/100/01.png";
+img.onload=function(){ //将选出的图片排版
+  if (len <= 4) {//直接一排
+    for(var i = 0;i < len ; i++){
+      canvas.drawImage(imglist[i].picture,190*i,0,img.width*0.17,img.height*0.17);    
+    }
+  }
+  else{// 先将能排满的行排好
+    _l = 4*Math.floor(len/4);
+    if (len%4 == 0) row = 0; //row为0没有余数不单排
+    else row = Math.ceil(len / 4) - 1;
+
+    for(var i = 0,j = 0 ;j < _l ; i+=4){
+      canvas.drawImage(imglist[j++].picture, 0 ,i*50,img.width*0.17,img.height*0.17);    
+      canvas.drawImage(imglist[j++].picture,190,i*50,img.width*0.17,img.height*0.17); 
+      canvas.drawImage(imglist[j++].picture,380,i*50,img.width*0.17,img.height*0.17); 
+      canvas.drawImage(imglist[j++].picture,570,i*50,img.width*0.17,img.height*0.17); 
+    }
+    if(row > 0){
+      for(var i = 0; i < len-_l; i++){//余出来的单排
+        canvas.drawImage(imglist[j++].picture,190*i,row*200,img.width*0.17,img.height*0.17);  
+      }
+    }  
+  }
 }
 
-//这里图片不知道为什么不能显示！！！
-//canvas.drawImage(imglist[0].picture,50,100);
-//var img = new Image();
-//img.src = "img/100/01.png"
-//canvas.drawImage(img,50,100);
 </script>
 </html>

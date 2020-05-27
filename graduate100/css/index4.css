@@ -25,13 +25,13 @@
     position: absolute;
     top:16%;
     z-index: 2;    
-    left:36.5%;
+    left:35.5%;
 }
 #name_txt{
     position: absolute;
     top:15.5%;
     width: 48%;    
-    left:50.5%;
+    left:49.5%;
     z-index: 2;
 }
 #major{
@@ -39,13 +39,13 @@
     position: absolute;
     top:19.5%;
     z-index: 2;    
-    left:36%;
+    left:35%;
 }
 #major_txt{
     position: absolute;
     top:19.2%;
     width: 48%;    
-    left:50.5%;
+    left:49.5%;
     z-index: 2;
 }
 #love_building{
@@ -53,13 +53,13 @@
     position: absolute;
     top:23%;
     z-index: 2;    
-    left:36%;
+    left:35%;
 }
 #building_txt{
     position: absolute;
-    top:22.8%;
+    top:22.6%;
     width: 33%;    
-    left:66%;
+    left:65%;
     z-index: 2;
 }
 #love_food{
@@ -67,13 +67,13 @@
     position: absolute;
     top:26.5%;
     z-index: 2;    
-    left:36%;
+    left:35%;
 }
 #food_txt{
     position: absolute;
-    top:26.3%;
+    top:26.2%;
     width: 33%;    
-    left:66%;
+    left:65%;
     z-index: 2;
 }
 #koudai{
