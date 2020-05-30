@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-    <div id='canvasdiv'style=" overflow:auto" >
+    <div id='canvasdiv'>
         <canvas id="canvas" style="position: absolute;width:96%;left:2%;" ></canvas>
     </div>
 </body>
@@ -120,15 +120,19 @@
   }
 </script>
 <script type="text/javascript">
+
+var imgnumlist = getimglist();
+var len = imgnumlist.length;
+var he = Math.ceil(len/4);
 var width = document.getElementById('canvasdiv').clientWidth;
-var height = document.getElementById('canvasdiv').clientHeight*6;
+var height = document.getElementById('canvasdiv').clientHeight/3.8*he;
 
 var can = document.getElementById('canvas');
 var canvas = can.getContext('2d');
 
 can.setAttribute('width',width)
 can.setAttribute('height',height)
-var imgnumlist = getimglist(); //int型选中的img序号数组
+ //int型选中的img序号数组
 var imglist = [];
 var p,q;
 canvas.font = "18px bold 黑体";
@@ -147,7 +151,6 @@ for(var i = 0;i < imgnumlist.length; i++){
   }
 }
 
-var len = imgnumlist.length;
 var img = new Image();
 var row,j;
 img.src = "img/100/01.png";
