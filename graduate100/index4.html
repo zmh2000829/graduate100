@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>毕业100</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/index4.css">
+  <title>毕业100</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/index4.css">
   <style>
     .textarea{
       width: 100%;
@@ -15,7 +15,9 @@
 <body>
   <div id="content">
     <div id="Home">   
-      
+      <div id="headimgdiv">
+        <img id='headimg' src="img/4-1.png" style="width:100%">
+      </div>
       <div id="name">
         <img src="img/4-1.png" style="width:100%">
       </div>
@@ -101,12 +103,14 @@
       var building = window.sessionStorage.getItem('build');
       var food = window.sessionStorage.getItem('food');
       var num = window.sessionStorage.getItem('num');
-      
+      var headimgsrc = window.sessionStorage.getItem('imgsrc');
+      // console.log(headimgsrc)
       document.all.name_text.innerHTML = name;
       document.all.major_text.innerHTML = major;
       document.all.building_text.innerHTML = building;
       document.all.food_text.innerHTML = food;
       document.all.num_text.innerHTML = num;
+      document.getElementById('headimg').src = headimgsrc
   }
 
   function getimglist(){//string序号数组转换int并返回
@@ -181,3 +185,4 @@ img.onload=function(){ //将选出的图片排版
 
 </script>
 </html>
+  

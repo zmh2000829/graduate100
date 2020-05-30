@@ -6,6 +6,13 @@
     left: 12.3%;
     top: 48%; 
 }
+#headimgdiv{
+    position: absolute;
+    width: 21%;
+    left: 10%;
+    top: 16.5%;
+    z-index: 2;
+}
 #content{
   position: absolute;
   background: url("../img/4-8.png") no-repeat center;
