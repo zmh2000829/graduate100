@@ -12,7 +12,7 @@
     }
   </style>
 </head>
-<body>
+<body style="margin: 0">
   <div id="content">
     <div id="Home">   
       <div id="headimgdiv">
@@ -54,16 +54,16 @@
       <div id="sodoi">
         <img src="img/4-7.png" style="width:100%">
       </div>
-      <div id="square">
-        <img src="img/4-9.png" style="width:100%">
+      <div id="square" style="display: none">
+        <img id="squareimg" src="img/4-9.png" style="width:100%">
       </div>
-      <div id="graduation">
+      <!-- <div id="graduation">
         <img src="img/4-10.png" style="width:100%">
-      </div>
+      </div> -->
     </div>
   </div>
     <div id='canvasdiv'>
-        <canvas id="canvas" style="position: absolute;width:96%;left:2%;" ></canvas>
+        <canvas id="canvas" style="position: absolute;width:100%;left:0%;" ></canvas>
     </div>
 </body>
 
@@ -129,13 +129,17 @@ var imgnumlist = getimglist();
 var len = imgnumlist.length;
 var he = Math.ceil(len/4);
 var width = document.getElementById('canvasdiv').clientWidth;
+var marginwidth = (1-0.76 * 0.96) * width / 2;
+var marginheight = 0.01 * document.documentElement.clientHeight;
+var backwidth = document.documentElement.clientWidth;
 var height = document.getElementById('canvasdiv').clientHeight/3.8*he;
 
 var can = document.getElementById('canvas');
 var canvas = can.getContext('2d');
-
+var backimg = document.getElementById("squareimg");
 can.setAttribute('width',width)
 can.setAttribute('height',height)
+canvas.drawImage(backimg, 0 ,0,backwidth,height); 
  //int型选中的img序号数组
 var imglist = [];
 var p,q;
@@ -161,7 +165,7 @@ img.src = "img/100/01.png";
 img.onload=function(){ //将选出的图片排版
   if (len <= 4) {//直接一排
     for(var i = 0;i < len ; i++){
-      canvas.drawImage(imglist[i].picture,190*i,0,img.width*0.17,img.height*0.17);    
+      canvas.drawImage(imglist[i].picture,marginwidth + 190*i,0+marginheight,img.width*0.17,img.height*0.17);    
     }
   }
   else{// 先将能排满的行排好
@@ -170,14 +174,14 @@ img.onload=function(){ //将选出的图片排版
     else row = Math.ceil(len / 4) - 1;
 
     for(var i = 0,j = 0 ;j < _l ; i+=4){
-      canvas.drawImage(imglist[j++].picture, 0 ,i*50,img.width*0.17,img.height*0.17);    
-      canvas.drawImage(imglist[j++].picture,190,i*50,img.width*0.17,img.height*0.17); 
-      canvas.drawImage(imglist[j++].picture,380,i*50,img.width*0.17,img.height*0.17); 
-      canvas.drawImage(imglist[j++].picture,570,i*50,img.width*0.17,img.height*0.17); 
+      canvas.drawImage(imglist[j++].picture, marginwidth + 0 ,i*50+marginheight,img.width*0.17,img.height*0.17);    
+      canvas.drawImage(imglist[j++].picture,marginwidth + 190,i*50+marginheight,img.width*0.17,img.height*0.17); 
+      canvas.drawImage(imglist[j++].picture,marginwidth + 380,i*50+marginheight,img.width*0.17,img.height*0.17); 
+      canvas.drawImage(imglist[j++].picture,marginwidth + 570,i*50+marginheight,img.width*0.17,img.height*0.17); 
     }
     if(row > 0){
       for(var i = 0; i < len-_l; i++){//余出来的单排
-        canvas.drawImage(imglist[j++].picture,190*i,row*200,img.width*0.17,img.height*0.17);  
+        canvas.drawImage(imglist[j++].picture,marginwidth + 190*i,row*200+marginheight,img.width*0.17,img.height*0.17);  
       }
     }  
   }

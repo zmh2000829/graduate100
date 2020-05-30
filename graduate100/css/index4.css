@@ -2,8 +2,9 @@
     z-index: 5;
     height: 43.5%;
     position: absolute;
-    width: 76%;
-    left: 12.3%;
+    /*width: 76%;
+    left: 12.3%;*/
+    width: 100%;
     top: 48%; 
 }
 #headimgdiv{
