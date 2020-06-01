@@ -271,8 +271,22 @@ function showPic(x,y)
     middleX = o_x+o_w/2
     middleY = o_y+10
     console.log('Onclick!!!')
-    if((o_x<x)&&(x<o_x+o_w)&&(y>o_y)&&(y<o_y+o_h)){
-      textlist[i].ispic = true
+    if((o_x<x)&&(x<o_x+o_w)&&(y>middleY-imageSize)&&(y<middleY+imageSize)){
+      if(textlist[i].ispic)
+      {
+        if(middleX-imageSize<x&&x<middleX+imageSize&&y>middleY-imageSize&&y<middleY+imageSize)
+        {
+          textlist[i].ispic = false
+        }
+      }
+      else{
+        // if((o_x<x)&&(x<o_x+o_w)&&(y>o_y)&&(y<o_y+o_h))
+        // {
+          textlist[i].ispic = true
+        // }
+        
+      }
+      
       // ctx.drawImage(img,middleX-50/2,middleY-50/2,50,50);
       selected.push(i)
       update()
@@ -346,7 +360,7 @@ canvas.addEventListener('click', function(e){
                 
          // if(speed > 100) speed = 0;
          if(-speed > totalWidth) {speed = width;}
-         speed -= 2;
+         speed -= 1;
          
     }());
 
