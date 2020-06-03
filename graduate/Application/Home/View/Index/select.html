@@ -97,6 +97,11 @@ var textlist = [];
 var selected = [];
 
 function select(){
+    for(i=0;i<100;i++){
+      if(textlist[i].ispic){
+        selected.push(i);
+      }
+    }
     if(selected.length > 0){ 
       window.sessionStorage['number'] = selected;  
       window.sessionStorage["num"] = selected.length;
@@ -288,7 +293,7 @@ function showPic(x,y)
       }
       
       // ctx.drawImage(img,middleX-50/2,middleY-50/2,50,50);
-      selected.push(i)
+      // selected.push(i)
       update()
       console.log(i,"text:",o_x,o_y,o_w,o_h,"mouse:",x,y)
     }
