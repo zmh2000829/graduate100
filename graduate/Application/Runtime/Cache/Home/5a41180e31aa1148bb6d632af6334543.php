@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
   <title>毕业100-2</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index2.css">
+  <link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index2.css">
 </head>
 <body style="margin: 0">
   <div id="content">
@@ -12,9 +12,9 @@
         <canvas id="canvas" style="position: absolute;" ></canvas>
       </div>
       <div id="btn" >
-        <img onclick="select()" src="__PUBLIC__/img/2-9.png" alt="666" style="width:100%">
+        <img onclick="select()" src="/graduate100/graduate/Public/img/2-9.png" alt="666" style="width:100%">
       </div>
-      <img id="img" src="__PUBLIC__/img/100/01.png" style="display:none">
+      <img id="img" src="/graduate100/graduate/Public/img/100/01.png" style="display:none">
     </div>
   </div>
 </body>
@@ -123,10 +123,10 @@ for(i=0;i<100;i++)
   textlist[i].ispic = false;
   textlist[i].picture = new Image();
   if(i+1<10){
-    textlist[i].picture.src = "__PUBLIC__/img/100/0"+(i+1).toString()+'.png';
+    textlist[i].picture.src = "/graduate100/graduate/Public/img/100/0"+(i+1).toString()+'.png';
   }
   else{
-    textlist[i].picture.src = "__PUBLIC__/img/100/"+(i+1).toString()+'.png';
+    textlist[i].picture.src = "/graduate100/graduate/Public/img/100/"+(i+1).toString()+'.png';
   }
   
 }

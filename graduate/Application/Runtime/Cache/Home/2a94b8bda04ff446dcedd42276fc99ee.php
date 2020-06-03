@@ -1,15 +1,21 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<title>毕业100</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<!-- <meta http-equiv="refresh" content="4;url=index2.html"> -->
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
-  <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index.css">
+  <script type="text/javascript" src="/graduate100/graduate/Public/js/jquery.min.js"></script>
   <style type="text/css">
     ul {
     list-style: none;           /*  去掉ul标签默认的点样式  */
+}
+#mooc {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0%;
 }
 /*  中间样式 */
 #moocBox {
@@ -22,17 +28,27 @@
   <div id="content">
     <div id="Home" >
       <div id="color">
-        <img src="__PUBLIC__/img/1.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/1.png" style="width:100%">
       </div>   
+      <!-- <div id="background">
+        <img src="/graduate100/graduate/Public/img/1-2.png" style="width:100%">
+      </div>  
+      <div id="getkoudai">
+        <img src="/graduate100/graduate/Public/img/1-3.png" style="width:100%">
+      </div> -->
       <div  id="color"> 
       <div  id="moocBox">
           <ul id="con1" style="height: 100%;margin:0;padding: 0">
           </ul>
           <ul id="color2" style="overflow: hidden;padding: 0;margin: 0;width: 85%;margin-left: 7.5%">
-              <img id="text" src="__PUBLIC__/img/1-2.png" style="width: 100%;height: auto;">
+              <img id="text" src="/graduate100/graduate/Public/img/1-2.png" style="width: 100%;height: auto;">
           </ul>
       </div>
+     <!--  <input type="hidden" name="sum" id="name" value="<?php echo ($sum); ?>" > -->
       </div>
+      <!-- <div id="btn" >
+        <img onclick="next()" src="/graduate100/graduate/Public/img/1-4.png" alt="666" style="width:100%">
+      </div> -->
 
     </div>
   </div>
@@ -54,11 +70,13 @@ var speed = 30;
 area.scrollTop = 0;
 function adddiv() {
     var div = document.createElement("div");
-    div.innerHTML = "<div id='getkoudai'><img style='width:100%' src='__PUBLIC__/img/1-3.png'></div>";//为div输入内容 
+    div.innerHTML = "<div id='getkoudai'><img style='width:100%' src='/graduate100/graduate/Public/img/1-3.png'></div>";//为div输入内容 
     document.getElementById("Home").appendChild(div);
     var div2 = document.createElement("div");
-    div2.innerHTML = "<div id='btn'><img onclick='next()' style='width:100%' src='__PUBLIC__/img/1-4.png'></div>";//为div输入内容 
+    div2.innerHTML = "<div id='btn'><img onclick='next()' style='width:100%' src='/graduate100/graduate/Public/img/1-4.png'></div>";//为div输入内容 
     document.getElementById("Home").appendChild(div2);
+    // $('#button1').css('top',bheight*0.45 + height+'px');
+    // $('#button1').css('width','80%');
 }
 function scrollUp(){
     if(area.scrollTop >= con1.scrollHeight || area.scrollTop >= height) {

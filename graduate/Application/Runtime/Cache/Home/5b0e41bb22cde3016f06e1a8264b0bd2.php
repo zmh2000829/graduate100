@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
   <title>毕业100</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index4.css">
+  <link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index4.css">
   <style>
     .textarea{
       width: 100%;
@@ -14,55 +14,55 @@
 </head>
 <body style="margin: 0">
   <div id="content">
-    <input type="hidden" name="name" id="name" value="{$name}" >
-    <input type="hidden" name="build" id="build" value="{$build}" >
-    <input type="hidden" name="food" id="food" value="{$food}" >
-    <input type="hidden" name="major" id="major" value="{$major}" >
-    <input type="hidden" name="imgpath" id="imgpath" value="{$imgpath}" >
-    <input type="hidden" name="selected" id="selected" value="{$selected}" >
-    <input type="hidden" name="sum" id="sum" value="{$sum}" >
+    <input type="hidden" name="name" id="name" value="<?php echo ($name); ?>" >
+    <input type="hidden" name="build" id="build" value="<?php echo ($build); ?>" >
+    <input type="hidden" name="food" id="food" value="<?php echo ($food); ?>" >
+    <input type="hidden" name="major" id="major" value="<?php echo ($major); ?>" >
+    <input type="hidden" name="imgpath" id="imgpath" value="<?php echo ($imgpath); ?>" >
+    <input type="hidden" name="selected" id="selected" value="<?php echo ($selected); ?>" >
+    <input type="hidden" name="sum" id="sum" value="<?php echo ($sum); ?>" >
     <div id="Home">   
       <div id="headimgdiv">
-        <img id='headimg' src="__PUBLIC__/img/4-1.png" style="width:100%">
+        <img id='headimg' src="/graduate100/graduate/Public/img/4-1.png" style="width:100%">
       </div>
       <div id="name">
-        <img src="__PUBLIC__/img/4-1.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-1.png" style="width:100%">
       </div>
       <div id="name_txt">
         <textarea class="textarea" rows="1" id="name_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="major">
-        <img src="__PUBLIC__/img/4-2.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-2.png" style="width:100%">
       </div>
       <div id="major_txt">
         <textarea class="textarea" rows="1" id="major_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="love_building">
-        <img src="__PUBLIC__/img/4-3.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-3.png" style="width:100%">
       </div>
       <div id="building_txt">
         <textarea rows="1" class="textarea" id="building_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="love_food">
-        <img src="__PUBLIC__/img/4-4.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-4.png" style="width:100%">
       </div>
       <div id="food_txt">
         <textarea rows="1" class="textarea" id="food_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>     
       <div id="koudai">
-        <img src="__PUBLIC__/img/4-5.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-5.png" style="width:100%">
       </div>
       <div id="num">
         <textarea rows="1" class="textarea" id="num_text" readonly="readonly" style="font-size: 90px;background:transparent;border-style:none;"></textarea>
       </div>
       <div id="things">
-        <img src="__PUBLIC__/img/4-6.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-6.png" style="width:100%">
       </div>
       <div id="sodoi">
-        <img src="__PUBLIC__/img/4-7.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/4-7.png" style="width:100%">
       </div>
       <div id="square" style="display: none">
-        <img id="squareimg" src="__PUBLIC__/img/4-9.png" style="width:100%">
+        <img id="squareimg" src="/graduate100/graduate/Public/img/4-9.png" style="width:100%">
       </div>
       <!-- <div id="graduation">
         <img src="img/4-10.png" style="width:100%">
@@ -167,10 +167,10 @@ for(var i = 0;i < imgnumlist.length; i++){
   imglist.push({s:items[n], x:0, y:0});
   imglist[i].picture = new Image();
   if(n + 1 < 10){
-    imglist[i].picture.src = "__PUBLIC__/img/100/0" + (n + 1).toString()+'.png';
+    imglist[i].picture.src = "/graduate100/graduate/Public/img/100/0" + (n + 1).toString()+'.png';
   }
   else{
-    imglist[i].picture.src = "__PUBLIC__/img/100/" + (n + 1).toString()+'.png';
+    imglist[i].picture.src = "/graduate100/graduate/Public/img/100/" + (n + 1).toString()+'.png';
   }
 }
 for (var i = 0; i < len; i++) {
@@ -179,7 +179,7 @@ for (var i = 0; i < len; i++) {
 }
 var img = new Image();
 var row,j;
-img.src = "__PUBLIC__/img/100/01.png";
+img.src = "/graduate100/graduate/Public/img/100/01.png";
 img.onload=function(){ //将选出的图片排版
   if (len <= 3) {
   //直接一排
@@ -214,4 +214,3 @@ img.onload=function(){ //将选出的图片排版
 
 </script>
 </html>
-  

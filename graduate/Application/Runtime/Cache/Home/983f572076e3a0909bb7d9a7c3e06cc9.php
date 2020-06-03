@@ -1,47 +1,47 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
   <title>毕业100-2</title>
-  <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-  <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/graduate100/graduate/Public/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/graduate100/graduate/Public/js/jquery.min.js"></script>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index2.css">
+  <link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index2.css">
 </head>
 <body style="margin: 0;position: absolute;width: 100%;height: 100%">
   <div id="content">
     <div id="Home">   
       <div id="background">
-        <img src="__PUBLIC__/img/2-3.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/2-3.png" style="width:100%">
       </div>  
       <div id="name">
-        <img src="__PUBLIC__/img/2-4.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/2-4.png" style="width:100%">
         <input id="nameText" v-model="username" placeholder="填写姓名" maxlength="8"/>
       </div>
       <div id="major">
-        <img src="__PUBLIC__/img/2-5.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/2-5.png" style="width:100%">
         <input id="majorText" v-model="usermajor" placeholder="填写专业" maxlength="12"/>
       </div>
       <div id="love_building">
-        <img src="__PUBLIC__/img/2-6.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/2-6.png" style="width:100%">
         <input id="buildingText" v-model="building" placeholder="填写你喜欢的复旦建筑" maxlength="12"/>
       </div>
       <div id="love_food">
-        <img src="__PUBLIC__/img/2-7.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/2-7.png" style="width:100%">
         <input id="foodText" v-model="food" placeholder="填写你喜欢的食堂菜品" maxlength="12"/>
       </div>
       <div id="load">
-        <img src="__PUBLIC__/img/2-8.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/2-8.png" style="width:100%">
       </div>
       <div id="square">
 
-        <img id='uploadimage' src="__PUBLIC__/img/2-2.png" style="width:100%" onclick="filesimg()">
+        <img id='uploadimage' src="/graduate100/graduate/Public/img/2-2.png" style="width:100%" onclick="filesimg()">
           <!-- <div class="file"> -->
             <!-- <i class="ico-plus"></i> -->
             <input  type="file" id="chooseImage" name="file" accept="image/*" id="upload" style="display: none;" >
           <!-- </div>   -->
       </div>
       <div id="btn" >
-        <img onclick="select()" src="__PUBLIC__/img/2-9.png" alt="666" style="width:100%">
+        <img onclick="select()" src="/graduate100/graduate/Public/img/2-9.png" alt="666" style="width:100%">
       </div>
 
     </div>
@@ -49,10 +49,6 @@
 </body>
 
  <script type="text/javascript">
-  var HEIGHT = $('body').height();
-    $(window).resize(function() {
-    　　$('#content').height(HEIGHT);
-    });
     function filesimg(){
       document.querySelector('input[type=file]').click();
     }

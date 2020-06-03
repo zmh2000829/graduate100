@@ -1,34 +1,34 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<title>毕业100</title>
 	<meta charset="utf-8">
   <!-- <meta http-equiv="refresh" content="4;url=index4.html"> -->
-	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index3.css">
+	<link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index3.css">
 </head>
 <body style="margin: 0">
   <div id="content">
     <div id="Home">   
       <div id="loading">
-        <img src="__PUBLIC__/img/3-2.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-2.png" style="width:100%">
       </div>  
       <div id="square">
-        <img id="squareimg" src="__PUBLIC__/img/4-9.png" style="width:100%">
+        <img id="squareimg" src="/graduate100/graduate/Public/img/4-9.png" style="width:100%">
       </div>
       <div id="egg1">
-        <img src="__PUBLIC__/img/3-3.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-3.png" style="width:100%">
       </div>
       <div id="egg2">
-        <img src="__PUBLIC__/img/3-3.png" style="width:100%;">
+        <img src="/graduate100/graduate/Public/img/3-3.png" style="width:100%;">
       </div>
       <div id="egg3">
-        <img src="__PUBLIC__/img/3-3.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-3.png" style="width:100%">
       </div>
       <div id="egg-pro">
-        <img src="__PUBLIC__/img/3-4.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-4.png" style="width:100%">
       </div>     
       <div id="memory">
-        <img src="__PUBLIC__/img/3-5.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-5.png" style="width:100%">
       </div>
     </div>
   </div>
