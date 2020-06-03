@@ -183,8 +183,8 @@ img.src = "__PUBLIC__/img/100/01.png";
 img.onload=function(){ //将选出的图片排版
   if (len <= 3) {//直接一排
     for(var i = 0;i < len ; i++){
-      canvas.drawImage(imglist[i].picture,255*i+45,0,img.width*0.19,img.height*0.19);    
-      canvas.fillText(imglist[i].s, 250*i+140,210);
+      canvas.drawImage(imglist[i].picture,255*i+140,0,img.width*0.19,img.height*0.19);    
+      canvas.fillText(imglist[i].s, 255*i+235,210);
     }
   }
   else{// 先将能排满的行排好
@@ -193,17 +193,17 @@ img.onload=function(){ //将选出的图片排版
     else row = Math.ceil(len / 3) - 1;
 
     for(var i = 0,j = 0 ;j < _l ; i+=3){
-      canvas.drawImage(imglist[j].picture, 45 ,i*80,img.width*0.19,img.height*0.19);
-      canvas.fillText(imglist[j++].s, 140,210+80*i);    
-      canvas.drawImage(imglist[j].picture,295,i*80,img.width*0.19,img.height*0.19); 
-      canvas.fillText(imglist[j++].s, 390,210+80*i);
-      canvas.drawImage(imglist[j].picture,545,i*80,img.width*0.19,img.height*0.19); 
-      canvas.fillText(imglist[j++].s, 640,210+80*i);
+      canvas.drawImage(imglist[j].picture, 140 ,i*80,img.width*0.19,img.height*0.19);
+      canvas.fillText(imglist[j++].s, 235,210+80*i);    
+      canvas.drawImage(imglist[j].picture,395,i*80,img.width*0.19,img.height*0.19); 
+      canvas.fillText(imglist[j++].s, 490,210+80*i);
+      canvas.drawImage(imglist[j].picture,650,i*80,img.width*0.19,img.height*0.19); 
+      canvas.fillText(imglist[j++].s, 745,210+80*i);
     }
     if(row > 0){
       for(var i = 0; i < len-_l; i++){//余出来的单排
-        canvas.drawImage(imglist[j].picture,250*i+50,row*240,img.width*0.19,img.height*0.19);  
-        canvas.fillText(imglist[j++].s, 250*i+145,row*240+210);
+        canvas.drawImage(imglist[j].picture,255*i+140,row*240,img.width*0.19,img.height*0.19);  
+        canvas.fillText(imglist[j++].s, 255*i+235,row*240+210);
       }
     }  
   }
