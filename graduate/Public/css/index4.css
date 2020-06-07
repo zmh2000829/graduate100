@@ -105,6 +105,13 @@
     top: 35.8%;
     z-index: 2;
 }
+#code{
+    position: absolute;
+    width: 17%;
+    left: 20%;
+    top: 35.3%;
+    z-index: 2;
+}
 #sodoi{
     position: absolute;
     width: 41%;
