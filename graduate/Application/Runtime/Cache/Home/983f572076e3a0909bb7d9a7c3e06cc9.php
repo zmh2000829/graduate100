@@ -49,6 +49,10 @@
 </body>
 
  <script type="text/javascript">
+  var HEIGHT = $('body').height();
+    $(window).resize(function() {
+    　　$('#content').height(HEIGHT);
+    });
     function filesimg(){
       document.querySelector('input[type=file]').click();
     }

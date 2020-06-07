@@ -11,12 +11,6 @@
     ul {
     list-style: none;           /*  去掉ul标签默认的点样式  */
 }
-#mooc {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    top: 0%;
-}
 /*  中间样式 */
 #moocBox {
     height: 100%;
@@ -30,12 +24,6 @@
       <div id="color">
         <img src="/graduate100/graduate/Public/img/1.png" style="width:100%">
       </div>   
-      <!-- <div id="background">
-        <img src="/graduate100/graduate/Public/img/1-2.png" style="width:100%">
-      </div>  
-      <div id="getkoudai">
-        <img src="/graduate100/graduate/Public/img/1-3.png" style="width:100%">
-      </div> -->
       <div  id="color"> 
       <div  id="moocBox">
           <ul id="con1" style="height: 100%;margin:0;padding: 0">
@@ -44,11 +32,7 @@
               <img id="text" src="/graduate100/graduate/Public/img/1-2.png" style="width: 100%;height: auto;">
           </ul>
       </div>
-     <!--  <input type="hidden" name="sum" id="name" value="<?php echo ($sum); ?>" > -->
       </div>
-      <!-- <div id="btn" >
-        <img onclick="next()" src="/graduate100/graduate/Public/img/1-4.png" alt="666" style="width:100%">
-      </div> -->
 
     </div>
   </div>
@@ -66,7 +50,7 @@ $('#moocBox').css('height',height+'px');
 var con1 = document.getElementById('con1');
 $('#con1').css('height',height+'px');
 var con2 = document.getElementById('color');
-var speed = 30;
+var speed = 15;
 area.scrollTop = 0;
 function adddiv() {
     var div = document.createElement("div");
@@ -75,8 +59,6 @@ function adddiv() {
     var div2 = document.createElement("div");
     div2.innerHTML = "<div id='btn'><img onclick='next()' style='width:100%' src='/graduate100/graduate/Public/img/1-4.png'></div>";//为div输入内容 
     document.getElementById("Home").appendChild(div2);
-    // $('#button1').css('top',bheight*0.45 + height+'px');
-    // $('#button1').css('width','80%');
 }
 function scrollUp(){
     if(area.scrollTop >= con1.scrollHeight || area.scrollTop >= height) {

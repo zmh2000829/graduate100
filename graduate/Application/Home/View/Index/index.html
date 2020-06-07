@@ -43,14 +43,12 @@
 var height = imgwidth * 2.09;
 $('#text').css('height',height+'px');
 var bheight = document.body.clientHeight;
-// var conheight = height * 0.4;
-// $('#con2').css('height', conheight + "px" );
 var area = document.getElementById('moocBox');
 $('#moocBox').css('height',height+'px');
 var con1 = document.getElementById('con1');
 $('#con1').css('height',height+'px');
 var con2 = document.getElementById('color');
-var speed = 30;
+var speed = 15;
 area.scrollTop = 0;
 function adddiv() {
     var div = document.createElement("div");
@@ -98,18 +96,8 @@ var myScroll = setInterval("scrollUp()",speed);
     }
   onload(); 
   function next(){
-    // window.location.href = "https://www.link-studio.cn/graduate/Home/Index/index2";
-    window.location.href = "http://localhost/graduate100/graduate/Home/Index/index2";
-
-  function draw(){
-      const canva = document.getElementById("canvas");
-const ctx = canva.getContext("2d");
-
-ctx.moveTo(0,0);
-ctx.lineTo(200,100);
-ctx.stroke();
-  }
-  draw();
+    window.location.href = "https://www.link-studio.cn/graduate/Home/Index/index2";
+    // window.location.href = "http://localhost/graduate100/graduate/Home/Index/index2";
 }
 </script>
 <script type="text/javascript">
