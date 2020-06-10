@@ -5,6 +5,9 @@ class IndexController extends Controller {
     public function indexAction(){
     	$this->display();
     }
+    public function index0Action(){
+        $this->display();
+    }
     public function index2Action(){
         $this->display();
     }
