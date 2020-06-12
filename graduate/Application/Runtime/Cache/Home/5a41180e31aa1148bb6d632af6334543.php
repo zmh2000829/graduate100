@@ -3,7 +3,7 @@
 <head>
   <title>毕业100-2</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index2.css">
+  <link rel="stylesheet" type="text/css" href="/graduate/Public/css/index2.css">
 </head>
 <body style="margin: 0">
   <div id="content">
@@ -12,9 +12,9 @@
         <canvas id="canvas" style="position: absolute;" ></canvas>
       </div>
       <div id="btn" >
-        <img onclick="select()" src="/graduate100/graduate/Public/img/2-9.png" alt="666" style="width:100%">
+        <img onclick="select()" src="/graduate/Public/img/2-9.png" alt="666" style="width:100%">
       </div>
-      <img id="img" src="/graduate100/graduate/Public/img/100/01.png" style="display:none">
+      <img id="img" src="/graduate/Public/img/100/01.png" style="display:none">
     </div>
   </div>
 </body>
@@ -82,8 +82,6 @@ var ctx = canvas.getContext('2d');
 
 canvas.setAttribute('width',width)
 canvas.setAttribute('height',height)
-// canvas.style.left = str((document.documentElement.clientWidth - width/0.9)/2 + 0.05*width/0.9)
-// ctx.fillStyle = "red";
 ctx.font = "40px sans-serif";
 ctx.textAlign = "left";
 ctx.textBaseline="top"; 
@@ -92,7 +90,6 @@ var textDownY = 0.75*height;
 var textLeftX = 0;
 var textRightX = width;
 var interval = width/4;
-// var total_width = textlist.length * interval;
 var textlist = [];
 var selected = [];
 
@@ -105,8 +102,8 @@ function select(){
     if(selected.length > 0){ 
       window.sessionStorage['number'] = selected;  
       window.sessionStorage["num"] = selected.length;
-      // window.location.href = "https://www.link-studio.cn/graduate/Home/Index/index3?number="+selected+"&sum="+selected.length;
-      window.location.href = "http://localhost/graduate100/graduate/Home/Index/index3?number="+selected+"&sum="+selected.length;
+      window.location.href = "https://www.link-studio.cn/graduate/Home/Index/index3?number="+selected+"&sum="+selected.length;
+      // window.location.href = "http://localhost/graduate100/graduate/Home/Index/index3?number="+selected+"&sum="+selected.length;
     }
     else{
       alert('还没有选择事件qaq')
@@ -123,10 +120,10 @@ for(i=0;i<100;i++)
   textlist[i].ispic = false;
   textlist[i].picture = new Image();
   if(i+1<10){
-    textlist[i].picture.src = "/graduate100/graduate/Public/img/100/0"+(i+1).toString()+'.png';
+    textlist[i].picture.src = "/graduate/Public/img/100/0"+(i+1).toString()+'.png';
   }
   else{
-    textlist[i].picture.src = "/graduate100/graduate/Public/img/100/"+(i+1).toString()+'.png';
+    textlist[i].picture.src = "/graduate/Public/img/100/"+(i+1).toString()+'.png';
   }
   
 }

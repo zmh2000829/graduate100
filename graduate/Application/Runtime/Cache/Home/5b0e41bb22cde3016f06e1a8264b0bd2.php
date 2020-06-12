@@ -3,9 +3,10 @@
 <head>
   <title>毕业100</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index4.css">
-  <script type="text/javascript" src="/graduate100/graduate/Public/js/html2canvas.min.js"></script>
- <!--  <script type="text/javascript" src="/graduate100/graduate/Public/js/html2canvas.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="/graduate/Public/css/index4.css">
+  <script type="text/javascript" src="/graduate/Public/js/html2canvas.min.js"></script>
+ <!--  <script type="text/javascript" src="/graduate/Public/js/html2canvas.js"></script> -->
+<!--  <script src="https://cdn.bootcdn.net/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script> -->
   <style>
     .textarea{
       width: 100%;
@@ -15,7 +16,8 @@
   </style>
 </head>
 <body style="margin: 0">
-  <div id="content">
+  <div id="content" >
+    <img src="/graduate/Public/img/4-8.png" style="height: 100%;width: 100%;margin: 0;padding: 0;position: absolute;"> 
     <input type="hidden" name="name" id="name" value="<?php echo ($name); ?>" >
     <input type="hidden" name="build" id="build" value="<?php echo ($build); ?>" >
     <input type="hidden" name="food" id="food" value="<?php echo ($food); ?>" >
@@ -23,52 +25,53 @@
     <input type="hidden" name="imgpath" id="imgpath" value="<?php echo ($imgpath); ?>" >
     <input type="hidden" name="selected" id="selected" value="<?php echo ($selected); ?>" >
     <input type="hidden" name="sum" id="sum" value="<?php echo ($sum); ?>" >
-    <div id="Home">   
+    <div id="Home">
+
       <div id="headimgdiv">
-        <img id='headimg' src="/graduate100/graduate/Public/img/4-1.png" style="width:100%">
+        <img id='headimg' src="/graduate/Public/img/4-1.png" style="width:100%">
       </div>
       <div id="name">
-        <img src="/graduate100/graduate/Public/img/4-1.png" style="width:100%">
+        <img src="/graduate/Public/img/4-1.png" style="margin: 0 auto;max-width:100%;max-height:100% ">
       </div>
       <div id="name_txt">
         <textarea class="textarea" rows="1" id="name_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="major">
-        <img src="/graduate100/graduate/Public/img/4-2.png" style="width:100%">
+        <img src="/graduate/Public/img/4-2.png" style="width:100%">
       </div>
       <div id="major_txt">
         <textarea class="textarea" rows="1" id="major_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="love_building">
-        <img src="/graduate100/graduate/Public/img/4-3.png" style="width:100%">
+        <img src="/graduate/Public/img/4-3.png" style="width:100%">
       </div>
       <div id="building_txt">
         <textarea rows="1" class="textarea" id="building_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>
       <div id="love_food">
-        <img src="/graduate100/graduate/Public/img/4-4.png" style="width:100%">
+        <img src="/graduate/Public/img/4-4.png" style="width:100%">
       </div>
       <div id="food_txt">
         <textarea rows="1" class="textarea" id="food_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
       </div>     
       <div id="koudai">
-        <img src="/graduate100/graduate/Public/img/4-5.png" style="width:100%">
+        <img src="/graduate/Public/img/4-5.png" style="width:100%">
       </div>
       <div id="num">
         <textarea rows="1" class="textarea" id="num_text" readonly="readonly" style="font-size: 90px;background:transparent;border-style:none;"></textarea>
       </div>
       <div id="things">
-        <img src="/graduate100/graduate/Public/img/4-6.png" style="width:100%">
+        <img src="/graduate/Public/img/4-6.png" style="width:100%">
+      </div>
+      <div id="code">
+        <img src="/graduate/Public/img/code.png" style="width:100%">
       </div>
       <div id="sodoi">
-        <img src="/graduate100/graduate/Public/img/4-7.png" style="width:100%">
+        <img src="/graduate/Public/img/4-7.png" style="width:100%">
       </div>
       <div id="square" style="display: none">
-        <img id="squareimg" src="/graduate100/graduate/Public/img/4-9.png" style="width:100%">
+        <img id="squareimg" src="/graduate/Public/img/4-9.png" style="width:100%">
       </div>
-      <!-- <div id="graduation">
-        <img src="img/4-10.png" style="width:100%">
-      </div> -->
     </div>
   </div>
     <div id='canvasdiv'>
@@ -118,13 +121,6 @@
       var food = document.getElementById('food').value;
       var num = document.getElementById('sum').value;
       var headimgsrc = document.getElementById('imgpath').value;
-      // var name = window.sessionStorage.getItem('name');
-      // var major = window.sessionStorage.getItem('major');
-      // var building = window.sessionStorage.getItem('build');
-      // var food = window.sessionStorage.getItem('food');
-      // var num = window.sessionStorage.getItem('num');
-      // var headimgsrc = window.sessionStorage.getItem('imgsrc');
-      // console.log(headimgsrc)
       document.all.name_text.innerHTML = name;
       document.all.major_text.innerHTML = major;
       document.all.building_text.innerHTML = building;
@@ -134,9 +130,7 @@
   }
 console.log("hhh");
   function getimglist(){     
-  //string序号数组转换int并返回
     var number = document.getElementById('selected').value;
-    // var number = window.sessionStorage.getItem('number');
     var list = [];
     var arr = number.split(',');
       for(var i = 0;i < arr.length;i++){
@@ -150,8 +144,8 @@ var imgnumlist = getimglist();
 var len = imgnumlist.length;
 var he = Math.ceil(len/3);
 var width = document.getElementById('canvasdiv').clientWidth;
-var marginwidth = (1-0.76 * 0.96) * width / 2;
-var imgwidth = 0.76 * 0.96 * width / 3;
+var marginwidth = (1-0.75) * width / 2;
+var imgwidth =  0.75 * width / 3;
 var marginheight = 0.01 * document.documentElement.clientHeight;
 var backwidth = document.documentElement.clientWidth;
 var height = (imgwidth)*he + he*35+marginheight;
@@ -174,19 +168,19 @@ for(var i = 0;i < imgnumlist.length; i++){
   imglist.push({s:items[n], x:0, y:0});
   imglist[i].picture = new Image();
   if(n + 1 < 10){
-    imglist[i].picture.src = "/graduate100/graduate/Public/img/100/0" + (n + 1).toString()+'.png';
+    imglist[i].picture.src = "/graduate/Public/img/100/0" + (n + 1).toString()+'.png';
   }
   else{
-    imglist[i].picture.src = "/graduate100/graduate/Public/img/100/" + (n + 1).toString()+'.png';
+    imglist[i].picture.src = "/graduate/Public/img/100/" + (n + 1).toString()+'.png';
   }
 }
-for (var i = 0; i < len; i++) {
-  console.log(imglist[i].s);
-  console.log(imgnumlist[i]);
-}
+// for (var i = 0; i < len; i++) {
+//   console.log(imglist[i].s);
+//   console.log(imgnumlist[i]);
+// }
 var img = new Image();
 var row,j;
-img.src = "/graduate100/graduate/Public/img/100/01.png";
+img.src = "/graduate/Public/img/100/01.png";
 img.onload=function(){ //将选出的图片排版
   if (len <= 3) {
   //直接一排

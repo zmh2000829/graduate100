@@ -2,46 +2,45 @@
 <html>
 <head>
   <title>毕业100-2</title>
-  <script type="text/javascript" src="/graduate100/graduate/Public/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/graduate100/graduate/Public/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/graduate/Public/js/jquery.min.js"></script>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index2.css">
+  <link rel="stylesheet" type="text/css" href="/graduate/Public/css/index2.css">
 </head>
 <body style="margin: 0;position: absolute;width: 100%;height: 100%">
   <div id="content">
     <div id="Home">   
       <div id="background">
-        <img src="/graduate100/graduate/Public/img/2-3.png" style="width:100%">
+        <img src="/graduate/Public/img/2-3.png" style="width:100%">
       </div>  
       <div id="name">
-        <img src="/graduate100/graduate/Public/img/2-4.png" style="width:100%">
+        <img src="/graduate/Public/img/2-4.png" style="width:100%">
         <input id="nameText" v-model="username" placeholder="填写姓名" maxlength="8"/>
       </div>
       <div id="major">
-        <img src="/graduate100/graduate/Public/img/2-5.png" style="width:100%">
+        <img src="/graduate/Public/img/2-5.png" style="width:100%">
         <input id="majorText" v-model="usermajor" placeholder="填写专业" maxlength="12"/>
       </div>
       <div id="love_building">
-        <img src="/graduate100/graduate/Public/img/2-6.png" style="width:100%">
+        <img src="/graduate/Public/img/2-6.png" style="width:100%">
         <input id="buildingText" v-model="building" placeholder="填写你喜欢的复旦建筑" maxlength="12"/>
       </div>
       <div id="love_food">
-        <img src="/graduate100/graduate/Public/img/2-7.png" style="width:100%">
+        <img src="/graduate/Public/img/2-7.png" style="width:100%">
         <input id="foodText" v-model="food" placeholder="填写你喜欢的食堂菜品" maxlength="12"/>
       </div>
       <div id="load">
-        <img src="/graduate100/graduate/Public/img/2-8.png" style="width:100%">
+        <img src="/graduate/Public/img/2-8.png" style="width:100%">
       </div>
       <div id="square">
 
-        <img id='uploadimage' src="/graduate100/graduate/Public/img/2-2.png" style="width:100%" onclick="filesimg()">
+        <img id='uploadimage' src="/graduate/Public/img/2-2.png" style="width:100%" onclick="filesimg()">
           <!-- <div class="file"> -->
             <!-- <i class="ico-plus"></i> -->
             <input  type="file" id="chooseImage" name="file" accept="image/*" id="upload" style="display: none;" >
           <!-- </div>   -->
       </div>
       <div id="btn" >
-        <img onclick="select()" src="/graduate100/graduate/Public/img/2-9.png" alt="666" style="width:100%">
+        <img onclick="select()" src="/graduate/Public/img/2-9.png" alt="666" style="width:100%">
       </div>
 
     </div>
@@ -54,6 +53,7 @@
     　　$('#content').height(HEIGHT);
     });
     function filesimg(){
+      // alert('请上传正方形图片哦~')
       document.querySelector('input[type=file]').click();
     }
     function onload(){
@@ -89,32 +89,21 @@
       var major = document.getElementById("majorText");
       var build = document.getElementById("buildingText");
       var food = document.getElementById("foodText");
-      var img = document.getElementById("uploadimage");
-      console.log(img.src)
-     // if((name.value == '')||(major.value == '')||(build.value == '')||(food.value == '')||(img.src == 'img/2-2.png')){
-     //      alert('信息还未完善哦~')
-     //  }
-     //  else{
-        // window.sessionStorage["name"] = name.value;
-        // window.sessionStorage["major"] = major.value;
-        // window.sessionStorage["build"] = build.value;
-        // window.sessionStorage["food"] = food.value;
-        // var imgpath = window.sessionStorage.getItem('imgsrc');
-        // window.sessionStorage["food"] = food.value;
-        
-        // window.location.href = "https://www.link-studio.cn/graduate/Home/Index/select?name="+name.value+"&major="+major.value+"&build="+build.value+"&food="+food.value+"&imgpath="+imgpath;
-         // window.location.href = "https://www.link-studio.cn/graduate/Home/Index/select";
-      //}
+      // var img = document.getElementById("uploadimage");
+      console.log(window.sessionStorage.getItem('imgsrc'));
+     if((name.value == '')||(major.value == '')||(build.value == '')||(food.value == '')||(window.sessionStorage.getItem('imgsrc') == null)){
+          alert('信息还未完善哦~')
+      }
+      else{
         var data = new Array();
         data['name'] = name.value;
         data["major"] = major.value;
         data["build"] = build.value;
         data["food"] = food.value;
         data['imgpath'] = window.sessionStorage.getItem('imgsrc');
-        //params.push({ name: "id", value: id});
         var temp = document.createElement("form"); 
-        // temp.action = "https://www.link-studio.cn/graduate/Home/Index/select"; 
-        temp.action = "http://localhost/graduate100/graduate/Home/Index/select";
+        temp.action = "https://www.link-studio.cn/graduate/Home/Index/select"; 
+        // temp.action = "http://localhost/graduate100/graduate/Home/Index/select";
         temp.method = "post"; 
         temp.style.display = "none"; 
         for (var x in data)
@@ -126,8 +115,8 @@
         }
         document.body.appendChild(temp); 
         temp.submit(); 
+      }
     }
-    postdata();
     </script>
   <script type="text/javascript">
   // let src;
@@ -150,7 +139,6 @@
         oFReader.onloadend = function(oFRevent){
         var path = oFRevent.target.result;
         window.sessionStorage['imgsrc'] = path; 
-        console.log(path)
     }
 
 });

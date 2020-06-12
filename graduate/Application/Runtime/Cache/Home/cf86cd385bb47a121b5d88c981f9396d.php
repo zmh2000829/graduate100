@@ -7,6 +7,8 @@
 	<!-- <meta http-equiv="refresh" content="4;url=index2.html"> -->
 	<link rel="stylesheet" type="text/css" href="/graduate/Public/css/index.css">
   <script type="text/javascript" src="/graduate/Public/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/graduate/Public/js/html2canvas.min.js"></script>
+  
   <style type="text/css">
     ul {
     list-style: none;           /*  去掉ul标签默认的点样式  */
