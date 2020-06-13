@@ -5,6 +5,13 @@
     height: 100%;
     width:100%;
 }
+#txtimg{
+    position: absolute;
+    width: 62%;
+    left: 18%;
+    top: 5%;
+    z-index: 1;
+}
 #background{
     position: absolute;
     width: 61%;

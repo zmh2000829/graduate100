@@ -39,10 +39,9 @@
  }
  #btn{
     position: absolute;
-    width: 17%;
-    right: 32.5%;
-    left: 58.5%;
-    top: 82.5%;
+    width: 60%;
+    left: 18.5%;
+    top: 84.5%;
     z-index: 5;
   }
     #btn img:hover {
