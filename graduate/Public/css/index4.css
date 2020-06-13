@@ -45,7 +45,7 @@
 }
 #name_txt{
     position: absolute;
-    top:16%;
+    top:15.5%;
     width: 48%;    
     left:49.5%;
     z-index: 2;
@@ -59,7 +59,7 @@
 }
 #major_txt{
     position: absolute;
-    top:19.5%;
+    top:19.2%;
     width: 48%;    
     left:49.5%;
     z-index: 2;
@@ -73,7 +73,7 @@
 }
 #building_txt{
     position: absolute;
-    top:23%;
+    top:22.6%;
     width: 33%;    
     left:65%;
     z-index: 2;
@@ -87,7 +87,7 @@
 }
 #food_txt{
     position: absolute;
-    top:26.5%;
+    top:26.2%;
     width: 33%;    
     left:65%;
     z-index: 2;
