@@ -50,7 +50,7 @@ $('#moocBox').css('height',height+'px');
 var con1 = document.getElementById('con1');
 $('#con1').css('height',height+'px');
 var con2 = document.getElementById('color');
-var speed = 15;
+var speed = 1;
 area.scrollTop = 0;
 function adddiv() {
     var div = document.createElement("div");
@@ -65,7 +65,7 @@ function scrollUp(){
         clearInterval(myScroll);
         setTimeout(adddiv(),1000);
     }else{
-        area.scrollTop ++; 
+        area.scrollTop  = area.scrollTop+2; 
     } 
 }
 var myScroll = setInterval("scrollUp()",speed);

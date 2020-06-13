@@ -28,9 +28,33 @@
     <div id="Home">
 
       <div id="headimgdiv">
-        <img id='headimg' src="/graduate/Public/img/4-1.png" style="width:100%">
+        <img id='headimg' src="" style="width:100%">
       </div>
       <div id="name">
+        <img src="/graduate/Public/img/4-1.png" style="margin: 0 auto;max-width:100%;max-height:100% ">
+      </div>
+      <div id="name_txt" style="font-size: 45px;font-family: 宋体">
+        <?php echo ($name); ?>
+      </div>
+      <div id="major">
+        <img src="/graduate/Public/img/4-2.png" style="width:100%">
+      </div>
+      <div id="major_txt" style="font-size: 45px;font-family: 宋体">
+        <?php echo ($major); ?>
+      </div>
+      <div id="love_building">
+        <img src="/graduate/Public/img/4-3.png" style="width:100%">
+      </div>
+      <div id="building_txt" style="font-size: 45px;font-family: 宋体">
+        <?php echo ($build); ?>
+      </div>
+      <div id="love_food">
+        <img src="/graduate/Public/img/4-4.png" style="width:100%">
+      </div>
+      <div id="food_txt" style="font-size: 45px;font-family: 宋体">
+        <?php echo ($food); ?>
+      </div>   
+      <!-- <div id="name">
         <img src="/graduate/Public/img/4-1.png" style="margin: 0 auto;max-width:100%;max-height:100% ">
       </div>
       <div id="name_txt">
@@ -53,12 +77,12 @@
       </div>
       <div id="food_txt">
         <textarea rows="1" class="textarea" id="food_text" readonly="readonly" style="font-size: 45px;background:transparent ;border-style:none;"></textarea>
-      </div>     
+      </div>    -->  
       <div id="koudai">
         <img src="/graduate/Public/img/4-5.png" style="width:100%">
       </div>
-      <div id="num">
-        <textarea rows="1" class="textarea" id="num_text" readonly="readonly" style="font-size: 90px;background:transparent;border-style:none;"></textarea>
+      <div id="num" style="font-size:90px;font-family: 宋体">
+        <?php echo ($sum); ?>
       </div>
       <div id="things">
         <img src="/graduate/Public/img/4-6.png" style="width:100%">
@@ -115,17 +139,17 @@
   onload(); 
   
   function getdata(){
-      var name = document.getElementById('name').value;
-      var major = document.getElementById('major').value;
-      var building = document.getElementById('build').value;
-      var food = document.getElementById('food').value;
-      var num = document.getElementById('sum').value;
+      // var name = document.getElementById('name').value;
+      // var major = document.getElementById('major').value;
+      // var building = document.getElementById('build').value;
+      // var food = document.getElementById('food').value;
+      // var num = document.getElementById('sum').value;
       var headimgsrc = document.getElementById('imgpath').value;
-      document.all.name_text.innerHTML = name;
-      document.all.major_text.innerHTML = major;
-      document.all.building_text.innerHTML = building;
-      document.all.food_text.innerHTML = food;
-      document.all.num_text.innerHTML = num;
+      // document.all.name_text.innerHTML = name;
+      // document.all.major_text.innerHTML = major;
+      // document.all.building_text.innerHTML = building;
+      // document.all.food_text.innerHTML = food;
+      // document.all.num_text.innerHTML = num;
       document.getElementById('headimg').src = headimgsrc
   }
 console.log("hhh");
@@ -148,7 +172,7 @@ var marginwidth = (1-0.75) * width / 2;
 var imgwidth =  0.75 * width / 3;
 var marginheight = 0.01 * document.documentElement.clientHeight;
 var backwidth = document.documentElement.clientWidth;
-var height = (imgwidth)*he + he*35+marginheight;
+var height = (imgwidth)*he + (he+2)*35+marginheight;
 
 var can = document.getElementById('canvas');
 var canvas = can.getContext('2d');
@@ -186,7 +210,7 @@ img.onload=function(){ //将选出的图片排版
   //直接一排
     for(var i = 0;i < len ; i++){
       canvas.drawImage(imglist[i].picture,imgwidth*(i+0.025)+marginwidth,0+marginheight,imgwidth*0.95,imgwidth*0.95);    
-      canvas.fillText(imglist[i].s, imgwidth*i+marginwidth,imgwidth+marginheight,imgwidth);
+      canvas.fillText(imglist[i].s, imgwidth*(0.5+i)+marginwidth,imgwidth+marginheight);
     }
   }
   else{
@@ -234,6 +258,34 @@ html2canvas(document.body,{scale:1,scrollY:0,scrollX:0,}).then(canvas =>{
         final_img.onload = function(){
           alert('请长按保存图片，或点击右上角分享按钮分享至朋友圈');
         }
+// console.log(document.documentElement.scrollHeight);
+// console.log(document.documentElement.scrollWidth);
+// console.log(document.documentElement.offsetHeight);
+// console.log(document.documentElement.offsetWidth);
+// console.log(document.body.scrollHeight);
+// console.log(document.body.scrollWidth);
+// console.log(document.body.offsetHeight);
+// console.log(document.body.offsetWidth);
+// html2canvas(document.body,{scale:1,
+//   scrollY:0,
+//   scrollX:0,
+// height: document.documentElement.scrollHeight,
+//             width: document.documentElement.scrollWidth,
+//             // windowWidth: document.documentElement.scrollWidth,
+//             // windowHeight: document.documentElement.scrollHeight,
+//             // x: 0,
+//             // y: 0, // 用网页滚动的高度定位y轴顶点
+//             }).then(canvas =>{
+//           document.getElementById('content').style.display =  'none';
+//           document.getElementById('canvasdiv').style.display =  'none';
+
+//   var url = canvas.toDataURL('image/png');
+//         var final_img = document.getElementById("res_img");
+//         final_img.src = url;
+//         final_img.onload = function(){
+//           alert('请长按保存图片，或点击右上角分享按钮分享至朋友圈');
+//         }
+// });
 });
 
 }
