@@ -4,31 +4,31 @@
 	<title>毕业100</title>
 	<meta charset="utf-8">
   <!-- <meta http-equiv="refresh" content="4;url=index4.html"> -->
-	<link rel="stylesheet" type="text/css" href="/graduate/Public/css/index3.css">
+	<link rel="stylesheet" type="text/css" href="/graduate100/graduate/Public/css/index3.css">
 </head>
 <body style="margin: 0">
   <div id="content">
     <div id="Home">   
       <div id="loading">
-        <img src="/graduate/Public/img/3-2.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-2.png" style="width:100%">
       </div>  
       <div id="square">
-        <img id="squareimg" src="/graduate/Public/img/4-9.png" style="width:100%">
+        <img id="squareimg" src="/graduate100/graduate/Public/img/4-9.png" style="width:100%">
       </div>
       <div id="egg1">
-        <img src="/graduate/Public/img/3-3.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-3.png" style="width:100%">
       </div>
       <div id="egg2">
-        <img src="/graduate/Public/img/3-3.png" style="width:100%;">
+        <img src="/graduate100/graduate/Public/img/3-3.png" style="width:100%;">
       </div>
       <div id="egg3">
-        <img src="/graduate/Public/img/3-3.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-3.png" style="width:100%">
       </div>
       <div id="egg-pro">
-        <img src="/graduate/Public/img/3-4.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-4.png" style="width:100%">
       </div>     
       <div id="memory">
-        <img src="/graduate/Public/img/3-5.png" style="width:100%">
+        <img src="/graduate100/graduate/Public/img/3-5.png" style="width:100%">
       </div>
     </div>
   </div>
@@ -76,8 +76,8 @@ function operate3(){
 }
 function operate4(){
     document.getElementById('egg-pro').style.display="";  
-    window.location.href='https://www.link-studio.cn/graduate/Home/Index/index4';
-    // window.location.href='http://localhost/graduate100/graduate/Home/Index/index4';
+    // window.location.href='https://www.link-studio.cn/graduate/Home/Index/index4';
+    window.location.href='http://localhost/graduate100/graduate/Home/Index/index4';
 }
 function disappeare(){
     document.getElementById('egg1').style.display="none";
